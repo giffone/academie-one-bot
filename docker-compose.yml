@@ -1,0 +1,25 @@
+services:
+  app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    image: academie_one_bot_app_image
+    container_name: academie_one_bot_app_container
+    restart: always
+    environment:
+      WEB_URL: ${WEB_URL}
+      DATABASE_URL: ${DATABASE_URL}
+      BOT_TOKEN: ${BOT_TOKEN}
+      QR_TEXT: ${QR_TEXT}
+      BOT_ID: ${BOT_ID}
+      REQ_LOG: ${REQ_LOG}
+
+  # web:
+  #   build: 
+  #     context: ./web
+  #     dockerfile: Dockerfile
+  #   image: academie_one_bot_web_image
+  #   container_name: academie_one_bot_web_container
+  #   restart: always
+  #   ports:
+  #     - ${WEB_PORT}
